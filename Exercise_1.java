@@ -1,44 +1,37 @@
-class Stack { 
-    static final int MAX = 1000; 
-    int top; 
-    int a[] = new int[MAX]; // Maximum size of Stack 
-  
-    boolean isEmpty() 
-    { 
-        //Write your code here 
-    } 
+class MyStack {
 
-    Stack() 
-    { 
-        //Initialize your constructor 
-    } 
-  
-    boolean push(int x) 
-    { 
-        //Check for stack Overflow
-        //Write your code here
-    } 
-  
-    int pop() 
-    { 
-        //If empty return 0 and print " Stack Underflow"
-        //Write your code here
-    } 
-  
-    int peek() 
-    { 
-        //Write your code here
-    } 
-} 
-  
-// Driver code 
-class Main { 
-    public static void main(String args[]) 
-    { 
-        Stack s = new Stack(); 
-        s.push(10); 
-        s.push(20); 
-        s.push(30); 
-        System.out.println(s.pop() + " Popped from stack"); 
-    } 
+    /** Initialize your data structure here. */
+    List<Integer> list;
+    public MyStack() {
+        list = new ArrayList<Integer>(); 
+    }
+    
+    /** Push element x onto stack. */
+    public void push(int x) {
+        list.add(x);
+    }
+    
+    /** Removes the element on top of the stack and returns that element. */
+    public int pop() {
+       return list.remove(list.size()-1); 
+    }
+    
+    /** Get the top element. */
+    public int top() {
+       return list.get(list.size()-1);
+    }
+    
+    /** Returns whether the stack is empty. */
+    public boolean empty() {
+        return list.size() == 0;
+    }
 }
+
+/**
+ * Your MyStack object will be instantiated and called as such:
+ * MyStack obj = new MyStack();
+ * obj.push(x);
+ * int param_2 = obj.pop();
+ * int param_3 = obj.top();
+ * boolean param_4 = obj.empty();
+ */
