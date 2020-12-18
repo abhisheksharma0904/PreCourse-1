@@ -1,52 +1,52 @@
-public class StackAsLinkedList { 
-  
-    StackNode root; 
-  
-    static class StackNode { 
-        int data; 
-        StackNode next; 
-  
-        StackNode(int data) 
-        { 
-            //Constructor here 
-        } 
-    } 
+class MyStack {
+
+    /** Initialize your data structure here. */
+    Node head;
+    class Node{
+        int val; 
+        Node next;
+        public Node(int val, Node next){
+            this.val = val;
+            this.next = next;
+        }
+    }
+    public MyStack() {
+        head = new Node(-1, null); 
+    }
     
-	
-    public boolean isEmpty() 
-    { 
-        //Write your code here for the condition if stack is empty. 
-    } 
-  
-    public void push(int data) 
-    { 
-        //Write code to push data to the stack. 
-    } 
-  
-    public int pop() 
-    { 	
-	//If Stack Empty Return 0 and print "Stack Underflow"
-        //Write code to pop the topmost element of stack.
-	//Also return the popped element 
-    } 
-  
-    public int peek() 
-    { 
-        //Write code to just return the topmost element without removing it.
-    } 
-  
-	//Driver code
-    public static void main(String[] args) 
-    { 
-  
-        StackAsLinkedList sll = new StackAsLinkedList(); 
-  
-        sll.push(10); 
-        sll.push(20); 
-        sll.push(30); 
-  
-        System.out.println(sll.pop() + " popped from stack"); 
-  
-        System.out.println("Top element is " + sll.peek()); 
-    } 
-} 
+    /** Push element x onto stack. */
+    public void push(int x) {
+        Node newNode = new Node(x, head); 
+        head = newNode; 
+        
+    }
+    
+    /** Removes the element on top of the stack and returns that element. */
+    public int pop() {
+       if(head.val != -1){
+           int result = head.val;
+           head = head.next;
+           return result;
+       }
+       return -1;
+    }
+    
+    /** Get the top element. */
+    public int top() {
+       return head.val;
+    }
+    
+    /** Returns whether the stack is empty. */
+    public boolean empty() {
+        return head.val == -1;
+    }
+}
+
+/**
+ * Your MyStack object will be instantiated and called as such:
+ * MyStack obj = new MyStack();
+ * obj.push(x);
+ * int param_2 = obj.pop();
+ * int param_3 = obj.top();
+ * boolean param_4 = obj.empty();
+ */
