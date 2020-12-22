@@ -32,7 +32,15 @@ public class GFG {
     /*function to insert element in binary tree */
     static void insert(Node temp, int key) 
     { 
-
+      Node newNode = new Node(key);  
+        if(temp == null){
+            temp = newNode;
+            return;
+        }
+        while(temp.left != null){
+            temp = temp.left;
+        }
+        temp.left = newNode;
         // Do level order traversal until we find 
         // an empty place and add the node.  
     } 
