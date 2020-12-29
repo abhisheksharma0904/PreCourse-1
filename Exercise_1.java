@@ -1,3 +1,5 @@
+// 
+
 class MyStack {
 
     /** Initialize your data structure here. */
@@ -7,21 +9,25 @@ class MyStack {
     }
     
     /** Push element x onto stack. */
+    // TC - O(1)
     public void push(int x) {
         list.add(x);
     }
     
     /** Removes the element on top of the stack and returns that element. */
+    // TC - O(1)
     public int pop() {
        return list.remove(list.size()-1); 
     }
     
     /** Get the top element. */
+    // TC - O(1)
     public int top() {
        return list.get(list.size()-1);
     }
     
     /** Returns whether the stack is empty. */
+    // TC - O(1)
     public boolean empty() {
         return list.size() == 0;
     }
